@@ -66,7 +66,7 @@ def on_message(client, userdata, msg):
             client.publish(topic, payload=payload, qos=0, retain=True)
 
 with open(sys.argv[1]) as f:
-    config = json.load(f)['options']
+    config = json.load(f)
 print(config)
 
 client = mqtt.Client()
