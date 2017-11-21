@@ -12,7 +12,7 @@
     "mqtt_password": "",
     "input_topic": "homeassistant/sensor/f007th",
     "output_topics": ["temperature", "humidity", "battery"],
-    "rooms": {
+    "channel_to_location": {
       "1": "bedroom",
       "2": "bathroom",
       "3": "outdoor",

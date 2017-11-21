@@ -11,7 +11,7 @@ def fahrenheit_to_celsius(x):
 class THSensor:
     def __init__(self, config, data):
         self.data = data
-        self.rooms = {int(k): v for k, v in config['rooms'].items()}
+        self.rooms = {int(k): v for k, v in config['channel_to_location'].items()}
         self.topics = config['output_topics']
 
     def get_all_topics(self):
@@ -64,7 +64,6 @@ def on_message(client, userdata, msg):
 
 with open(sys.argv[1]) as f:
     config = json.load(f)
-print(config)
 
 client = mqtt.Client()
 client.config = config
