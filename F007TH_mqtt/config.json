@@ -1,0 +1,24 @@
+{
+  "name": "Make data from F007TH Thermo-Hygrometer consumable by hass.io",
+  "version": "1",
+  "slug": "F007TH_mqtt",
+  "description": "Converts fahrenheit to celsius and creates one topic per sensor.",
+  "url": "https://github.com/ephes/hassio-addons/tree/master/F007TH_mqtt",
+  "startup": "before",
+  "boot": "auto",
+  "options": {
+    "mqtt_host": "hassio.local",
+    "mqtt_user": "",
+    "mqtt_password": "",
+    "input_topic": "homeassistant/sensor/f007th",
+    "output_topics": ["temperature", "humidity", "battery"],
+    "rooms": {
+      1: "bedroom",
+      2: "bathroom",
+      3: "outdoor",
+      4: "wintergarden",
+      5: "livingroom"
+	}
+  },
+  "schema": false
+}
