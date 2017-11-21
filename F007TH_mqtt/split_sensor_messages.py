@@ -11,7 +11,7 @@ def fahrenheit_to_celsius(x):
 class THSensor:
     def __init__(self, config, data):
         self.data = data
-        self.rooms = config['rooms']
+        self.rooms = {int(k): v for k, v in config['rooms'].items()}
         self.topics = config['output_topics']
 
     @classmethod
