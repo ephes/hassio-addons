@@ -14,11 +14,10 @@ class THSensor:
         self.rooms = {int(k): v for k, v in config['rooms'].items()}
         self.topics = config['output_topics']
 
-    @classmethod
-    def get_all_topics(cls):
+    def get_all_topics(self):
         all_topics = []
-        for room in cls.rooms.values():
-            for topic in cls.topics:
+        for room in self.rooms.values():
+            for topic in self.topics:
                 all_topics.append('/homeassistant/{}/{}'.format(room, topic))
         return all_topics
 
@@ -54,8 +53,6 @@ class THSensor:
 
 def on_connect(client, userdata, flags, rc):
     client.subscribe(client.config['input_topic'])
-    for topic in THSensor.get_all_topics():
-        client.subscribe(topic)
 
 
 def on_message(client, userdata, msg):
