@@ -57,7 +57,7 @@ def on_connect(client, userdata, flags, rc):
 
 def on_message(client, userdata, msg):
     data = json.loads(msg.payload)
-    if data.get('model', '') == 'Ambient Weather F007TH Thermo-Hygrometer' and False:
+    if data.get('model', '') == 'Ambient Weather F007TH Thermo-Hygrometer':
         thsensor = THSensor(client.config, data)
         for topic, payload in thsensor.new_messages():
             client.publish(topic, payload=payload, qos=0, retain=True)
