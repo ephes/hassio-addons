@@ -13,12 +13,12 @@
     "input_topic": "homeassistant/sensor/f007th",
     "output_topics": ["temperature", "humidity", "battery"],
     "rooms": {
-      1: "bedroom",
-      2: "bathroom",
-      3: "outdoor",
-      4: "wintergarden",
-      5: "livingroom"
+      "1": "bedroom",
+      "2": "bathroom",
+      "3": "outdoor",
+      "4": "wintergarden",
+      "5": "livingroom"
 	}
   },
-  "schema": {}
+  "schema": false
 }
