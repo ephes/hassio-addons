@@ -5,6 +5,7 @@ ENV LANG C.UTF-8
 
 # Copy data for add-on
 COPY run.sh /
+COPY sensors.py
 COPY split_sensor_messages.py /
 RUN chmod a+x /run.sh
 
